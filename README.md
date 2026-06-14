@@ -7,6 +7,15 @@
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=flat&logo=jupyter&logoColor=white)
 ![Dashboard](https://img.shields.io/badge/Dashboard-HTML%2FJS-00C2FF?style=flat)
 ![Dataset](https://img.shields.io/badge/Dataset-7%2C043%20customers-blue?style=flat)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat)
+
+---
+
+## 📸 Dashboard Preview
+
+![Telco Churn Dashboard](Dashboard-Preview/dashboard-preview.png)
+
+> 🔴 **[▶ View Live Dashboard](https://vijayalakshmis0304-sudo.github.io/telco-churn-intelligence-dashboard/Dashboard-HTML/telco_churn_dashboard.html)**
 
 ---
 
@@ -54,27 +63,23 @@ Ranked by mean absolute SHAP value across the test set:
 ## 📁 Repository Structure
 
 ```
-telco-churn-prediction/
+telco-churn-intelligence-dashboard/
 │
-├── telco_churn_analysis.ipynb        # Full ML pipeline (Jupyter / Colab)
-├── telco_churn_dashboard.html        # Interactive analytics dashboard
+├── Code/
+│   └── telco_churn_analysis.ipynb        # Full ML pipeline (Jupyter / Colab)
 │
-├── data/
+├── Dashboard-HTML/
+│   └── telco_churn_dashboard.html        # Interactive analytics dashboard
+│
+├── Dashboard-Preview/
+│   └── dashboard-preview.png             # Screenshot for README preview
+│
+├── Dataset/
 │   └── WA_Fn-UseC_-Telco-Customer-Churn.csv   # Source dataset (IBM Watson)
 │
-├── outputs/
-│   ├── churn_predictions.csv         # Test set predictions with risk tiers
-│   ├── model_comparison.csv          # LR · RF · XGBoost metrics side-by-side
-│   └── feature_importance_shap.csv   # SHAP values for all 30 features
-│
-├── images/
-│   ├── eda_overview.png              # 4-panel EDA chart
-│   ├── correlation_heatmap.png       # Feature correlation matrix
-│   ├── roc_curve.png                 # ROC curves for all three models
-│   ├── shap_bar.png                  # SHAP bar chart (global importance)
-│   ├── shap_dot.png                  # SHAP beeswarm / dot plot
-│   └── confusion_matrix.png          # XGBoost confusion matrix
-│
+├── .gitignore
+├── LICENSE
+├── requirements.txt
 └── README.md
 ```
 
@@ -100,7 +105,7 @@ telco-churn-prediction/
 
 ### Run the notebook (Google Colab — recommended)
 
-1. Open `telco_churn_analysis.ipynb` in [Google Colab](https://colab.research.google.com/)
+1. Open `Code/telco_churn_analysis.ipynb` in [Google Colab](https://colab.research.google.com/)
 2. Upload `WA_Fn-UseC_-Telco-Customer-Churn.csv` to the Colab files panel
 3. Run all cells (`Runtime → Run all`)
 
@@ -112,17 +117,19 @@ Dependencies install automatically in the first cell:
 ### Run locally
 
 ```bash
-git clone https://github.com/your-username/telco-churn-prediction.git
-cd telco-churn-prediction
+git clone https://github.com/vijayalakshmis0304-sudo/telco-churn-intelligence-dashboard.git
+cd telco-churn-intelligence-dashboard
 
-pip install pandas numpy matplotlib seaborn scikit-learn xgboost shap scipy jupyter
+pip install -r requirements.txt
 
-jupyter notebook telco_churn_analysis.ipynb
+jupyter notebook Code/telco_churn_analysis.ipynb
 ```
 
 ### View the dashboard
 
-Open `telco_churn_dashboard.html` directly in any modern browser — no server or installation required.
+Open `Dashboard-HTML/telco_churn_dashboard.html` directly in any modern browser — no server or installation required.
+
+Or use the **[live demo link](https://vijayalakshmis0304-sudo.github.io/telco-churn-intelligence-dashboard/Dashboard-HTML/telco_churn_dashboard.html)** above.
 
 ---
 
@@ -172,7 +179,7 @@ Saves all CSVs and PNGs for use in the dashboard and reporting.
 
 ## 📈 Dashboard
 
-`telco_churn_dashboard.html` is a self-contained, single-file analytics dashboard built with Chart.js and vanilla JS — no frameworks, no build step.
+`Dashboard-HTML/telco_churn_dashboard.html` is a self-contained, single-file analytics dashboard built with Chart.js and vanilla JS — no frameworks, no build step.
 
 **Sections:**
 - Executive KPI cards (churn rate, high-risk count, AUC-ROC, revenue at risk, avg monthly charge)
