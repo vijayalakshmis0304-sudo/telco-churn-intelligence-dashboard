@@ -1,0 +1,10 @@
+telco-churn-intelligence-dashboard/
+│
+├── Code/
+├── Dashboard-HTML/
+├── Dashboard-Preview/
+├── Dataset/
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt          ← here
